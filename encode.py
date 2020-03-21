@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import math
 
-def encode(hexcode, bar_width, bar_chunk_height_height):
+def encode(hexcode, bar_width, bar_chunk_height):
   # The region that represents on hex character (left pad plus bar size).
   bar_region = bar_width * 3
 
