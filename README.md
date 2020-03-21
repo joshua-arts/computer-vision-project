@@ -19,3 +19,7 @@ Final group project for COMP4102 at Carleton University.
 - should be mapping from barcode <-> data and vice versa 
 - should be able to go from barcode -> hex value
 - should be able to go from hex value -> barcode
+
+### Stretch TODO
+- map hex value of an image to some sort of useable information (link, file, some piece of data) that can be returned by the server to a client
+- decode "messy" images, like one taken from a smartphone, images that aren't "perfect"
