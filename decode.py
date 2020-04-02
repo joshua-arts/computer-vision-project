@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 class Decoder:
-    def __init__(self, image_path):
-        img = cv2.imread(image_path)
+    def __init__(self, image_arr):
+        img = cv2.imdecode(image_arr, cv2.IMREAD_COLOR)
         self.lines = self.get_lines(img)
         self.lines = self.sort_lines()
 
@@ -85,8 +85,3 @@ class Decoder:
                 hex_code += self.bottom_values[key]
 
         return hex_code
-
-
-if __name__ == "__main__":
-    decoder = Decoder('hex16-examples/jpg/hex16-0.jpg')
-    print(decoder.decode())
