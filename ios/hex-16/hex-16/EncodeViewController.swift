@@ -9,7 +9,11 @@
 import UIKit
 
 class EncodeViewController: UIViewController {
-
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBAction func decodeButton(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

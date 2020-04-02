@@ -80,6 +80,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Decode"/>
                                 <connections>
+                                    <action selector="decodeButton:" destination="Wsc-wP-I9h" eventType="touchUpInside" id="pKZ-hD-4zi"/>
                                     <segue destination="pEW-uf-osK" kind="show" id="9TM-JG-mmY"/>
                                 </connections>
                             </button>
@@ -101,6 +102,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0iT-3s-v93"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="068-EH-YhN" id="kAP-PR-CGS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtS-SO-zl6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,35 +118,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsN-xz-Fcv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFf-B5-yVs">
-                                        <rect key="frame" x="20" y="722" width="374" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Capture"/>
-                                        <connections>
-                                            <segue destination="pEW-uf-osK" kind="show" id="UTg-NY-7Cc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tuV-UA-XBB">
+                                <rect key="frame" x="0.0" y="271" width="414" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="pFf-B5-yVs" secondAttribute="trailing" constant="20" id="Gqo-ka-8ds"/>
-                                    <constraint firstItem="pFf-B5-yVs" firstAttribute="leading" secondItem="XsN-xz-Fcv" secondAttribute="leading" constant="20" id="aIH-hU-bAG"/>
-                                    <constraint firstAttribute="bottom" secondItem="pFf-B5-yVs" secondAttribute="bottom" constant="60" id="v0o-q5-rM6"/>
+                                    <constraint firstAttribute="height" constant="300" id="x1O-AG-jHB"/>
                                 </constraints>
-                            </view>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLO-Pe-pAp">
+                                <rect key="frame" x="20" y="60" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhotoButton:" destination="XcW-A4-GgR" eventType="touchUpInside" id="s5p-fb-wbc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzR-oj-m53">
+                                <rect key="frame" x="20" y="688" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Decode Photo"/>
+                                <connections>
+                                    <action selector="decodePhotoButton:" destination="XcW-A4-GgR" eventType="touchUpInside" id="saC-K1-kWV"/>
+                                    <segue destination="pEW-uf-osK" kind="show" id="TKH-rr-LaN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XsN-xz-Fcv" firstAttribute="leading" secondItem="heh-Pi-qMz" secondAttribute="leading" id="NaN-eJ-pDq"/>
-                            <constraint firstAttribute="bottom" secondItem="XsN-xz-Fcv" secondAttribute="bottom" id="YSe-K4-WXh"/>
-                            <constraint firstItem="XsN-xz-Fcv" firstAttribute="top" secondItem="heh-Pi-qMz" secondAttribute="top" id="hAf-o3-SGv"/>
-                            <constraint firstItem="XsN-xz-Fcv" firstAttribute="trailing" secondItem="heh-Pi-qMz" secondAttribute="trailing" id="zlB-PS-XAF"/>
+                            <constraint firstItem="eLO-Pe-pAp" firstAttribute="top" secondItem="heh-Pi-qMz" secondAttribute="top" constant="60" id="B5d-bc-tKW"/>
+                            <constraint firstItem="heh-Pi-qMz" firstAttribute="bottom" secondItem="XzR-oj-m53" secondAttribute="bottom" constant="60" id="Ih7-xy-wNr"/>
+                            <constraint firstItem="XzR-oj-m53" firstAttribute="leading" secondItem="heh-Pi-qMz" secondAttribute="leading" constant="20" id="RqO-xK-oEu"/>
+                            <constraint firstItem="tuV-UA-XBB" firstAttribute="leading" secondItem="heh-Pi-qMz" secondAttribute="leading" id="Uba-5T-5De"/>
+                            <constraint firstItem="tuV-UA-XBB" firstAttribute="centerY" secondItem="sif-3C-PYJ" secondAttribute="centerY" id="X7G-jO-dm4"/>
+                            <constraint firstItem="heh-Pi-qMz" firstAttribute="trailing" secondItem="eLO-Pe-pAp" secondAttribute="trailing" constant="20" id="YjF-VQ-2Ys"/>
+                            <constraint firstItem="heh-Pi-qMz" firstAttribute="trailing" secondItem="XzR-oj-m53" secondAttribute="trailing" constant="20" id="jca-Yw-Icz"/>
+                            <constraint firstItem="eLO-Pe-pAp" firstAttribute="leading" secondItem="heh-Pi-qMz" secondAttribute="leading" constant="20" id="o3x-zF-pd4"/>
+                            <constraint firstItem="heh-Pi-qMz" firstAttribute="trailing" secondItem="tuV-UA-XBB" secondAttribute="trailing" id="pfg-iR-NnK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="heh-Pi-qMz"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="tuV-UA-XBB" id="3Mx-SV-9Je"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFG-kB-gfS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,10 +171,26 @@
                     <view key="view" contentMode="scaleToFill" id="yJa-Kc-kaW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpd-Ug-x3w">
+                                <rect key="frame" x="20" y="397.5" width="374" height="47"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="P45-9Z-7uP" firstAttribute="trailing" secondItem="qpd-Ug-x3w" secondAttribute="trailing" constant="20" id="VOM-l5-GlH"/>
+                            <constraint firstItem="qpd-Ug-x3w" firstAttribute="centerY" secondItem="yJa-Kc-kaW" secondAttribute="centerY" id="pln-dJ-vEa"/>
+                            <constraint firstItem="qpd-Ug-x3w" firstAttribute="leading" secondItem="P45-9Z-7uP" secondAttribute="leading" constant="20" id="xEB-AR-SiM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="P45-9Z-7uP"/>
                     </view>
                     <navigationItem key="navigationItem" id="EzN-6o-wjV"/>
+                    <connections>
+                        <outlet property="outputLabel" destination="qpd-Ug-x3w" id="ppd-OV-tg9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5B-2q-W0L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,6 +216,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9TM-JG-mmY"/>
+        <segue reference="TKH-rr-LaN"/>
     </inferredMetricsTieBreakers>
 </document>

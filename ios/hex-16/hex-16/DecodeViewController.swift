@@ -10,6 +10,8 @@ import UIKit
 
 class DecodeViewController: UIViewController {
 
+    @IBOutlet weak var outputLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
