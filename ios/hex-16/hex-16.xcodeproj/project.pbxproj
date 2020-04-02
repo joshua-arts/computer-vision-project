@@ -13,6 +13,9 @@
 		8C0A4AB8242FCC7300F238D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0A4AB6242FCC7300F238D4 /* Main.storyboard */; };
 		8C0A4ABA242FCC7900F238D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0A4AB9242FCC7900F238D4 /* Assets.xcassets */; };
 		8C0A4ABD242FCC7900F238D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0A4ABB242FCC7900F238D4 /* LaunchScreen.storyboard */; };
+		8C99F4C82436988600F73E0A /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C99F4C72436988600F73E0A /* CaptureViewController.swift */; };
+		8C99F4CA243698A000F73E0A /* EncodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C99F4C9243698A000F73E0A /* EncodeViewController.swift */; };
+		8C99F4CC243698AA00F73E0A /* DecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C99F4CB243698AA00F73E0A /* DecodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		8C0A4AB9242FCC7900F238D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C0A4ABC242FCC7900F238D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C0A4ABE242FCC7900F238D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C99F4C72436988600F73E0A /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		8C99F4C9243698A000F73E0A /* EncodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeViewController.swift; sourceTree = "<group>"; };
+		8C99F4CB243698AA00F73E0A /* DecodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				8C0A4AB9242FCC7900F238D4 /* Assets.xcassets */,
 				8C0A4ABB242FCC7900F238D4 /* LaunchScreen.storyboard */,
 				8C0A4ABE242FCC7900F238D4 /* Info.plist */,
+				8C99F4C72436988600F73E0A /* CaptureViewController.swift */,
+				8C99F4C9243698A000F73E0A /* EncodeViewController.swift */,
+				8C99F4CB243698AA00F73E0A /* DecodeViewController.swift */,
 			);
 			path = "hex-16";
 			sourceTree = "<group>";
@@ -139,7 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0A4AB5242FCC7300F238D4 /* ViewController.swift in Sources */,
+				8C99F4C82436988600F73E0A /* CaptureViewController.swift in Sources */,
 				8C0A4AB1242FCC7300F238D4 /* AppDelegate.swift in Sources */,
+				8C99F4CA243698A000F73E0A /* EncodeViewController.swift in Sources */,
+				8C99F4CC243698AA00F73E0A /* DecodeViewController.swift in Sources */,
 				8C0A4AB3242FCC7300F238D4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
