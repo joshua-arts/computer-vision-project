@@ -24,7 +24,7 @@ class EncodeViewController: UIViewController {
             return
         }
         
-        let url = URL(string: "http://localhost:5000/encode?hexcode=\(hexcode)")!
+        let url = URL(string: "http://10.0.0.105:5000/encode?hexcode=\(hexcode)")!
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
@@ -37,7 +37,6 @@ class EncodeViewController: UIViewController {
         }.resume()
     }
     
-
     /*
     // MARK: - Navigation
 

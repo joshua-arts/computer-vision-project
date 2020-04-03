@@ -39,4 +39,4 @@ api.add_resource(Hex, '/')
 api.add_resource(Encode, '/encode')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host= '0.0.0.0', debug=True)
