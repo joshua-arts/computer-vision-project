@@ -62,7 +62,7 @@ class Encoder:
 
     # Get the image into a format we can easily send over HTTP.
     _, buffer = cv2.imencode('.png', encoded)
-    return base64.b64encode(buffer)
+    return buffer.tobytes()
 
 # # Define the hex strings to encode.
 # sample_self.hexcode = '0123456789abcdef'

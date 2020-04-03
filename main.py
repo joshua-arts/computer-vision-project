@@ -23,7 +23,7 @@ class Hex(Resource):
         return "Error finding file, please upload image with key 'image'"
 
 class Encode(Resource):
-    def post(self):
+    def get(self):
         args = parser.parse_args()
         if 'hexcode' in args:
             hexcode = str(args['hexcode'])
