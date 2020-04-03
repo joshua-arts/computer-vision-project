@@ -11,6 +11,7 @@ import UIKit
 class EncodeViewController: UIViewController {
     
     var hexcode: String?
+    var image: UIImage?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func decodeButton(_ sender: UIButton) {
@@ -32,19 +33,18 @@ class EncodeViewController: UIViewController {
             }
             
             DispatchQueue.main.async() {
-                self.imageView.image = UIImage(data: data)
+                self.image = UIImage(data: data)
+                self.imageView.image = self.image
             }
         }.resume()
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is DecodeViewController {
+            let viewController = segue.destination as? DecodeViewController
+            viewController?.hexImage = image
+        }
     }
-    */
-
 }

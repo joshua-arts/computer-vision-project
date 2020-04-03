@@ -38,15 +38,12 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
         imageView.image = info[.originalImage] as? UIImage
     }
     
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is DecodeViewController, imageView.image != nil {
+            let viewController = segue.destination as? DecodeViewController
+            viewController?.hexImage = imageView.image
+        }
     }
-    */
-
 }
