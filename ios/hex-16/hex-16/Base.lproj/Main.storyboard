@@ -62,6 +62,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Select HEX-16 Input" id="SI7-TZ-WVR"/>
+                    <connections>
+                        <outlet property="encodeButton" destination="k2v-S5-BUZ" id="QHP-Yw-eCk"/>
+                        <outlet property="hexText" destination="c6r-oa-UNH" id="0Gj-5h-20i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

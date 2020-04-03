@@ -10,14 +10,31 @@ import UIKit
 
 class EncodeViewController: UIViewController {
     
+    var hexcode: String?
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func decodeButton(_ sender: UIButton) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard let hexcode = hexcode else {
+            print("hexcode error")
+            return
+        }
+        
+        let url = URL(string: "http://localhost:5000/encode?hexcode=\(hexcode)")!
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            DispatchQueue.main.async() {
+                self.imageView.image = UIImage(data: data)
+            }
+        }.resume()
     }
     
 
