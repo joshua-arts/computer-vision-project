@@ -1,11 +1,16 @@
-from flask import Flask, request
-from flask_restful import Resource, Api
+from flask import Flask, request, make_response
+from flask_restful import reqparse, Resource, Api
 import numpy as np
 import pdb
+
+from encode import Encoder
 from decode import Decoder
 
 app = Flask(__name__)
 api = Api(app)
+
+parser = reqparse.RequestParser()
+parser.add_argument('hexcode', type=str)
 
 class Hex(Resource):
     def get(self):
@@ -17,7 +22,21 @@ class Hex(Resource):
             return decoder.decode()
         return "Error finding file, please upload image with key 'image'"
 
+class Encode(Resource):
+    def post(self):
+        args = parser.parse_args()
+        if 'hexcode' in args:
+            hexcode = str(args['hexcode'])
+            encoder = Encoder(hexcode)
+
+            response = make_response(encoder.encode())
+            response.headers['Content-Type'] = 'image/png'
+
+            return response
+        return "No hexcode to encode provided."
+
 api.add_resource(Hex, '/')
+api.add_resource(Encode, '/encode')
 
 if __name__ == '__main__':
     app.run(debug=True)
