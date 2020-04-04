@@ -14,6 +14,11 @@ Final group project for COMP4102 at Carleton University.
 - ??
 - make video
 
+### Video
+- generate image from a hex code
+- get hex code back from image
+- demonstrate that it can get the correct hex code from images with stuff in the background
+
 ## DONE
 - retrieve information from image
 - encoding information into hex
