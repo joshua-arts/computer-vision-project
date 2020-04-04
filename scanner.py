@@ -25,22 +25,29 @@ class Scanner:
         box = cv2.boxPoints(rect)
         box = np.int0(box)
 
-        #draw the box over the original image
-        cv2.drawContours(self.image, [box.astype(int)], -1, (0, 255, 0), 3)
+        x1 = self.image.shape[1]
+        x2 = 0
+        y1 = self.image.shape[0]
+        y2 = 0
 
-        cv2.imshow('box', self.image)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        # get the box points
+        for point in box:
+            if point[0] < x1: x1 = point[0]
+            if point[0] > x2: x2 = point[0]
+            if point[1] < y1: y1 = point[1]
+            if point[1] > y2: y2 = point[1]
 
-        # cv2.imwrite("detected_barcode.png", self.image)
+        # crop and return just the barcode
+        box_img = self.image[y1:y2, x1:x2]
 
-        # TODO: cut out the box and return just the barcode
-
-        return self.image
+        return box_img
 
 
 if __name__ == '__main__':
     img = cv2.imread("scanner_test_images/barcode_on_forest.png")
     scn = Scanner(img)
-    scn.detect_barcode()
+    barcode = scn.detect_barcode()
 
+    cv2.imshow('barcode', barcode)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
