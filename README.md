@@ -11,14 +11,16 @@ Final group project for COMP4102 at Carleton University.
 
 
 ## TODO
+- make 
+
+## DONE
 - retrieve information from image
-- line horizontal position is the order
-- line length and vertical position signifies value
 - encoding information into hex
 - creating images from hex
-- should be mapping from barcode <-> data and vice versa 
 - should be able to go from barcode -> hex value
 - should be able to go from hex value -> barcode
+- set up server to send and receive information from iOS app
+- find barcode in "noisy" image
 
 ### Stretch TODO
 - map hex value of an image to some sort of useable information (link, file, some piece of data) that can be returned by the server to a client
