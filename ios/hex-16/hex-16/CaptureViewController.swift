@@ -36,6 +36,8 @@ class CaptureViewController: UIViewController, UINavigationControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         imageView.image = info[.originalImage] as? UIImage
+        
+        UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil, nil);
     }
     
     // MARK: - Navigation

@@ -56,6 +56,9 @@ class Scanner:
         box_img = cv2.cvtColor(box_img, cv2.COLOR_BGR2GRAY)
         _, box_thresh = cv2.threshold(box_img, 127, 255, 0)
 
+        blurred = cv2.GaussianBlur(box_thresh, (3, 3), cv2.BORDER_DEFAULT)
+        _, box_thresh = cv2.threshold(blurred, 200, 255, 0)
+
         return box_thresh
 
 
