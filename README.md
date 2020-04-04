@@ -11,7 +11,8 @@ Final group project for COMP4102 at Carleton University.
 
 
 ## TODO
-- make 
+- ??
+- make video
 
 ## DONE
 - retrieve information from image
