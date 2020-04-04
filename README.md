@@ -19,6 +19,11 @@ Final group project for COMP4102 at Carleton University.
 - get hex code back from image
 - demonstrate that it can get the correct hex code from images with stuff in the background
 
+- (Josh, part 1) intro, image spec. encoder, how a barcode image is generated from hex
+- (Drew, part 2) scanner, how a barcode is found in an image.
+- (Vikram, part 3) decoder, how information is retreived from a barcode, server
+- (Bimal, part 4) iOS front end, demo of generating image from hex, getting same hex back from the image. conclusion.
+
 ## DONE
 - retrieve information from image
 - encoding information into hex
