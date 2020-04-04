@@ -35,6 +35,8 @@ class EncodeViewController: UIViewController {
             DispatchQueue.main.async() {
                 self.image = UIImage(data: data)
                 self.imageView.image = self.image
+                
+                UIImageWriteToSavedPhotosAlbum(self.image!, nil, nil, nil);
             }
         }.resume()
     }
