@@ -12,7 +12,7 @@ class Scanner:
         gray = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
 
         # geting the threshold image
-        _, thresh = cv2.threshold(gray, 254, 255, 0)
+        _, thresh = cv2.threshold(gray, 230, 255, 0)
 
         # finding the contours
         cnts, _ = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
@@ -24,6 +24,12 @@ class Scanner:
         rect = cv2.minAreaRect(c)
         box = cv2.boxPoints(rect)
         box = np.int0(box)
+
+        # cv2.drawContours(self.image, [box.astype(int)], -1, (0, 255, 0), 3)
+
+        # cv2.imshow('box', self.image)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
 
         x1 = self.image.shape[1]
         x2 = 0
@@ -37,6 +43,14 @@ class Scanner:
             if point[1] < y1: y1 = point[1]
             if point[1] > y2: y2 = point[1]
 
+        x_off = (x2-x1)*0.025
+        y_off = (y2-y1)*0.025
+
+        x1 = int(x1 + x_off)
+        x2 = int(x2 - x_off)
+        y1 = int(y1 + y_off)
+        y2 = int(y2 - y_off)
+
         # crop and return just the barcode
         box_img = self.image[y1:y2, x1:x2]
 
@@ -44,7 +58,7 @@ class Scanner:
 
 
 if __name__ == '__main__':
-    img = cv2.imread("scanner_test_images/barcode_on_forest.png")
+    img = cv2.imread("camera_img.png")
     scn = Scanner(img)
     barcode = scn.detect_barcode()
 
