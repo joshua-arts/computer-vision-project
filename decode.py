@@ -1,9 +1,14 @@
 import cv2
 import numpy as np
+from scanner import Scanner
 
 class Decoder:
     def __init__(self, image_arr):
         img = cv2.imdecode(image_arr, cv2.IMREAD_COLOR)
+
+        scn = Scanner(img)
+        img = scn.detect_barcode()
+
         self.lines = self.get_lines(img)
         self.lines = self.sort_lines()
 
