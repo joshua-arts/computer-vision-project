@@ -43,6 +43,7 @@ class Scanner:
             if point[1] < y1: y1 = point[1]
             if point[1] > y2: y2 = point[1]
 
+        # offset is to trim off any noise caught around the boundary of the barcode
         x_off = (x2-x1)*0.025
         y_off = (y2-y1)*0.025
 
@@ -63,7 +64,7 @@ class Scanner:
 
 
 if __name__ == '__main__':
-    img = cv2.imread("camera_img.png")
+    img = cv2.imread("test_images/barcode_car.png")
     scn = Scanner(img)
     barcode = scn.detect_barcode()
 
