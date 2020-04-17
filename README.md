@@ -1,4 +1,4 @@
-# computer-vision-project
+# Hex 16 Codes
 
 Final group project for COMP4102 at Carleton University.
 
@@ -9,35 +9,17 @@ Final group project for COMP4102 at Carleton University.
 - Vikram Bombhi
 - Drew Suitor
 
+## Running Instructions
 
-## TODO
-- ??
-- make video
+### Python Server
 
-### Video
-- generate image from a hex code
-- get hex code back from image
-- demonstrate that it can get the correct hex code from images with stuff in the background
+The python server is responsible for encoding and decoding images and is what the mobile app communicates with. Below are the steps required to run the python server.
 
-- (Josh, part 1) intro, image spec. encoder, how a barcode image is generated from hex
-- (Drew, part 2) scanner, how a barcode is found in an image.
-- (Vikram, part 3) decoder, how information is retreived from a barcode, server
-- (Bimal, part 4) iOS front end, demo of generating image from hex, getting same hex back from the image. conclusion.
+1. Ensure you have Python3 and pip installed.
+2. Install the required dependencies with `pip install -r requirements`.
+3. Run the server with `python3 main.py`.
 
-## DONE
-- retrieve information from image
-- encoding information into hex
-- creating images from hex
-- should be able to go from barcode -> hex value
-- should be able to go from hex value -> barcode
-- set up server to send and receive information from iOS app
-- find barcode in "noisy" image
-
-### Stretch TODO
-- map hex value of an image to some sort of useable information (link, file, some piece of data) that can be returned by the server to a client
-- decode "messy" images, like one taken from a smartphone, images that aren't "perfect"
-
-### Spec Draft
+## Spec Overview
 
 Barcode will encode single hex digits (0…f) using the following rules:
 
@@ -49,4 +31,3 @@ Barcode will encode single hex digits (0…f) using the following rules:
 - The data bars will either start at the top of the frame or end at the bottom of the frame, causing a scissor like appearance. If the `base_10(hex) % 2 === 0` then the bar starts at the top of the frame, else it ends at the bottom.
     - i.e. bar `B` has base_10 = 11, 11 % 2 = 1, therefore it will end at the bottom of the frame
 - The orientation bar is 2x the width of the data bars, and the data bars must have 2x the data bar width of spacing between them. Actual bar pixel sizes does not matter as long as constraints are met.
-
