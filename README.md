@@ -15,8 +15,8 @@ Final group project for COMP4102 at Carleton University.
 
 The python server is responsible for encoding and decoding images and is what the mobile app communicates with. Below are the steps required to run the python server.
 
-1. Ensure you have Python3 and pip installed.
-2. Install the required dependencies with `pip install -r requirements`.
+1. Ensure you have [Python3](https://www.python.org/download/releases/3.0/) and [pip](https://pypi.org/project/pip/) installed.
+2. Install the required dependencies with `pip install -r requirements.txt`.
 3. Run the server with `python3 main.py`.
 
 ## Spec Overview
