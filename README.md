@@ -19,6 +19,10 @@ The python server is responsible for encoding and decoding images and is what th
 2. Install the required dependencies with `pip install -r requirements.txt`.
 3. Run the server with `python3 main.py`.
 
+The server has two endpoints:
+1. POST to `/` to decode, where you can pass your image with key `'image'`.
+2. GET to `/encode?hexcode=<your-16-digit-hexcode>` will return the encoded image.
+
 ## Spec Overview
 
 Barcode will encode single hex digits (0…f) using the following rules:
