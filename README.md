@@ -23,6 +23,12 @@ The server has two endpoints:
 1. POST to `/` to decode, where you can pass your image with key `'image'`.
 2. GET to `/encode?hexcode=<your-16-digit-hexcode>` will return the encoded image.
 
+### iOS App
+
+1. Open XCode and open the `ios/hex-16` directory as a project
+2. Modify all occurences of `10.0.0.5` to `localhost` if running on an iOS simulator OR to your local IP address for running on a real device.
+3. Click the `PLAY` button in XCode to run the app on an iOS simulator (prefer iOS 13+).
+
 ## Spec Overview
 
 Barcode will encode single hex digits (0…f) using the following rules:
