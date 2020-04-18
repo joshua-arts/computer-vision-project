@@ -25,12 +25,6 @@ class Scanner:
         box = cv2.boxPoints(rect)
         box = np.int0(box)
 
-        # cv2.drawContours(self.image, [box.astype(int)], -1, (0, 255, 0), 3)
-
-        # cv2.imshow('box', self.image)
-        # cv2.waitKey(0)
-        # cv2.destroyAllWindows()
-
         x1 = self.image.shape[1]
         x2 = 0
         y1 = self.image.shape[0]
